@@ -4,11 +4,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String[][] fileData = getFileData("Day04Input.txt",10);
-        int size = 140; // 140 for real, 10 for test
-        for (String[] row : fileData) {
-            System.out.println(Arrays.toString(row));
-        }
+        // 140 for real puzzle, 10 for testing input
+        String[][] fileData = getFileData("src/Day04Input.txt",140);
         partOne(fileData);
         partTwo(fileData);
     }
@@ -19,7 +16,7 @@ public class Main {
             File f = new File(fileName);
             Scanner s = new Scanner(f);
             int count = 0;
-            while (s.hasNext()) {
+            while (s.hasNext() && count < size) {
                 String line = s.nextLine();
                 if (!line.isEmpty()) {
                     for (int i = 0; i < line.length(); i++) {
@@ -30,6 +27,7 @@ public class Main {
             }
             return fileData;
         } catch (FileNotFoundException e) {
+            System.out.println("File not found!");
             return new String[size][size];
         }
     }
