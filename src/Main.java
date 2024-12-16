@@ -37,7 +37,6 @@ public class Main {
         int count = 0;
         for (int row = 0; row < data.length; row++){
             for (int col = 0; col < data[0].length; col++){
-
                 // horizontal left, col - 1
                 if (col - 3 >= 0
                         && data[row][col].equals("X")
@@ -46,7 +45,6 @@ public class Main {
                         && data[row][col-3].equals("S")){
                     count++;
                 }
-
                 // horizontal right, col + 1
                 if (col + 3 < data[0].length
                         && data[row][col].equals("X")
@@ -55,7 +53,6 @@ public class Main {
                         && data[row][col+3].equals("S")){
                     count++;
                 }
-
                 // vertical up, row - 1
                 if (row - 3 >= 0
                         && data[row][col].equals("X")
@@ -64,7 +61,6 @@ public class Main {
                         && data[row-3][col].equals("S")){
                     count++;
                 }
-
                 // vertical down, row + 1
                 if (row + 3 < data.length
                         && data[row][col].equals("X")
@@ -73,7 +69,6 @@ public class Main {
                         && data[row+3][col].equals("S")){
                     count++;
                 }
-
                 // diagonal left top, right bottom, row + 1, col + 1
                 if (row + 3 < data.length
                         && col + 3 < data[0].length
@@ -83,7 +78,6 @@ public class Main {
                         && data[row+3][col+3].equals("S")){
                     count++;
                 }
-
                 // diagonal right top, left bottom, row + 1, col - 1
                 if (row + 3 < data.length
                         && col - 3 >= 0
@@ -93,7 +87,6 @@ public class Main {
                         && data[row+3][col-3].equals("S")){
                     count++;
                 }
-
                 // diagonal right bottom, left top, row - 1, col - 1
                 if (row - 3 >= 0
                         && col - 3 >= 0
@@ -103,7 +96,6 @@ public class Main {
                         && data[row-3][col-3].equals("S")){
                     count++;
                 }
-
                 // diagonal left bottom, right top, row - 1, col + 1
                 if (row - 3 >= 0
                         && col + 3 < data[0].length
@@ -124,14 +116,7 @@ public class Main {
         for (int row = 0; row < data.length; row++){
             for (int col = 0; col < data[0].length; col++){
                 int count = 0;
-
-                // bottom right, row + 1, col + 1
-                /*
-                 * M__
-                 * _A_
-                 * __S
-                 * */
-
+                // diagonally top left, bottom right
                 if (row + 1 < data.length
                         && row - 1 >= 0
                         && col + 1 < data[0].length
@@ -141,14 +126,7 @@ public class Main {
                         && data[row+1][col+1].equals("S")){
                     count++;
                 }
-
-                // bottom left, row + 1, col - 1
-                /*
-                 * __M
-                 * _A_
-                 * S__
-                 * */
-
+                // diagonally top right, bottom left
                 if (row + 1 < data.length
                         && row - 1 >= 0
                         && col + 1 < data[0].length
@@ -158,14 +136,7 @@ public class Main {
                         && data[row+1][col-1].equals("S")){
                     count++;
                 }
-
-                // top left, row - 1, col - 1
-                /*
-                 * S__
-                 * _A_
-                 * __M
-                 * */
-
+                // diagonally bottom right, top left
                 if (row + 1 < data.length
                         && row - 1 >= 0
                         && col + 1 < data[0].length
@@ -175,14 +146,7 @@ public class Main {
                         && data[row-1][col-1].equals("S")){
                     count++;
                 }
-
-                // top right, row - 1, col + 1
-                /*
-                 * __S
-                 * _A_
-                 * M__
-                 * */
-
+                // diagonally bottom left, top right
                 if (row + 1 < data.length
                         && row - 1 >= 0
                         && col + 1 < data[0].length
@@ -199,5 +163,4 @@ public class Main {
         }
         System.out.println(totalCount);
     }
-
 }
